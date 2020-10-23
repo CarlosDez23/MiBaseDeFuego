@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "226772375425",
+    "firebase_url": "https://first-firebase-158a1.firebaseio.com",
+    "project_id": "first-firebase-158a1",
+    "storage_bucket": "first-firebase-158a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226772375425:android:e95d68071d1ed904a03a80",
+        "android_client_info": {
+          "package_name": "com.example.mibasedefuego"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226772375425-6hc6oh60n13h800eae8rdrb1oj0iop9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPv-GRLBReoQ6HEUxGvs3AR7QauadVwck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226772375425-6hc6oh60n13h800eae8rdrb1oj0iop9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

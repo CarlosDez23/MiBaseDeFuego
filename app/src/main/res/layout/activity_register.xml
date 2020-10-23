@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+    <LinearLayout
+        android:layout_marginTop="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:clickable="true"
+                android:focusable="true"
+                app:civ_border_width="3dp"
+                app:civ_border_color="#FFFFFFFF"
+                android:id="@+id/ivRegisterProfile"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:elevation="5dp"
+                android:padding="20dp"
+                android:layout_marginTop="50dp"
+                android:scaleType="centerCrop" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="PERFIL"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/btnIrPerfil"
+                android:visibility="invisible"/>
+
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/etRegisterMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/etRegisterUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/etRegisterPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"/>
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR"/>
+
+        <Button
+            android:id="@+id/btnMostrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MOSTRAR"/>
+
+        <Button
+            android:id="@+id/btnBorrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BORRAR"/>
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange"
+            android:text="VOLVER"/>
+    </LinearLayout>
+
+</RelativeLayout>

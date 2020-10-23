@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:clickable="true"
+                android:focusable="true"
+                app:civ_border_width="3dp"
+                app:civ_border_color="#FFFFFFFF"
+                android:id="@+id/profile"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:elevation="5dp"
+                android:padding="20dp"
+                android:layout_marginTop="50dp"
+                android:scaleType="centerCrop" />
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvProfileMail"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvProfileUser"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvProfilePhone"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/btnProfileGuardar"
+            android:layout_marginTop="80dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GUARDAR"/>
+
+    </LinearLayout>
+        
+        
+
+
+</RelativeLayout>
