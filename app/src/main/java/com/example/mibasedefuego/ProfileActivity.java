@@ -53,11 +53,16 @@ public class ProfileActivity extends AppCompatActivity {
     //Tarea de subida de archivo
     private UploadTask uploadTask;
 
+    //Check if the user has profile photo yet
+    private boolean tieneFoto;
+    private String imageUrl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         setUp();
+        tieneFoto = false;
         mStorageRef = FirebaseStorage.getInstance().getReference();
     }
 
@@ -90,8 +95,9 @@ public class ProfileActivity extends AppCompatActivity {
         this.tvProfileUsername.setText(intent.getStringExtra("username"));
         this.tvProfilePhone.setText(intent.getStringExtra("phone"));
         if(intent.getStringExtra("img") != null){
-            String url = intent.getStringExtra("img");
-            Picasso.with(getApplicationContext()).load(url).into(ivProfile);
+            tieneFoto = true;
+            imageUrl = intent.getStringExtra("img");
+            Picasso.with(getApplicationContext()).load(imageUrl).into(ivProfile);
         }
     }
 
@@ -100,6 +106,10 @@ public class ProfileActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.btnProfileGuardar:
+                    //Si tiene foto previamente que esta se borre de Storage
+                    if(tieneFoto){
+                      deleteFileFromFirebase();
+                    }
                     uploadFileToFirebase();
                     break;
                 case R.id.profile:
@@ -164,6 +174,22 @@ public class ProfileActivity extends AppCompatActivity {
         db.collection("users").document(tvProfileEmail.getText().toString())
                 .update(user);
         showMessage("Foto de perfil añadida al usuario");
+    }
+
+    //Deletes a file from Firestore
+    private void deleteFileFromFirebase(){
+      StorageReference imgRef = mStorageRef.getReferenceFromUrl(url);
+      imgRef.delete().addOnSuccessListener(new addOnSuccessListener<Void>(){
+        @Override
+        public void onSuccess (Void aVoid){
+          System.out.println("La anterior imagen ha sido borrada");
+        }
+      }).addOnFailureListener(new OnFailureListener(){
+        @Override
+        public void onFailure(@NonNull Exception exception){
+          System.out.println("Error borrando la imagen anterior del almacenamiento");
+        }
+      });
     }
 
     private void showMessage(String message){
