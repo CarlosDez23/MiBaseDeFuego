@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
@@ -178,8 +180,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     //Deletes a file from Firestore
     private void deleteFileFromFirebase(){
-      StorageReference imgRef = mStorageRef.getReferenceFromUrl(url);
-      imgRef.delete().addOnSuccessListener(new addOnSuccessListener<Void>(){
+      StorageReference imgRef = mStorageRef.child(imageUrl);
+      imgRef.delete().addOnSuccessListener(new OnSuccessListener<Void>(){
         @Override
         public void onSuccess (Void aVoid){
           System.out.println("La anterior imagen ha sido borrada");
